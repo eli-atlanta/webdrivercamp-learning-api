@@ -1,5 +1,8 @@
 def append_to_file(data, file_name):
+    with open(file_name, 'a') as file_append:
+        character_count = file_append.write(data)
 
+    return character_count
 
 # YOUR CODE HERE
 
