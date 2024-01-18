@@ -1,5 +1,13 @@
 def write_to_file(data, filename):
+    length = 0
+    with open(filename, 'w') as file_write:
+        file_write.write(data)
 
+    with open(filename, 'r') as file_read:
+        for line in file_read:
+            length += len(line)
+
+    return length
 
 # YOUR CODE HERE
 
