@@ -5,7 +5,7 @@ def get_repos(url):
     print(f"Response status Code:", response.status_code)
     print(f"Total count of found items:", response.json()['total_count'])
     before_list = response.json()['items']
-    return sorted(before_list, key=lambda x: x['full_name'])
+    return sorted(before_list, key=lambda x: x['full_name'], reverse=False)
 
 
 
