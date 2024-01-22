@@ -1,7 +1,10 @@
 import requests
 
 def get_with_auth(url):
-    #YOUR CODE HERE
+    header_authorization = {'Authorization': 'token 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'}
+    r = requests.get(url, headers=header_authorization)
+    print(f"Response status code:", r.status_code)
+    return len(r.json()), r.headers
 
 if __name__=="__main__":
     url = "https://api.github.com/user/repos"
