@@ -1,7 +1,7 @@
 import requests
 
 def get_with_auth(url):
-    header_authorization = {'Authorization': '<TOKEN>'}
+    header_authorization = {'Authorization': 'token <TOKEN>'}
     r = requests.get(url, headers=header_authorization)
     print(f"Response status code:", r.status_code)
     return len(r.json()), r.headers
