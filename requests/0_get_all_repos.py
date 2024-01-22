@@ -1,9 +1,13 @@
 import requests
 
 def get_repos(url):
-    response = requests.get(url, params={'q': 'webdrivercamp-learning-python'})
-    print(f"Status Code:", response.status_code)
-    print(response.text)
+    response = requests.get(url)
+    print(f"Response status Code:", response.status_code)
+    print(f"Total count of found items:", response.json()['total_count'])
+    before_list = response.json()['items']
+    return sorted(before_list, key=lambda x: x['full_name'])
+
+
 
 if __name__=="__main__":
     url = "https://api.github.com/search/repositories?q=webdrivercamp-learning-python"
